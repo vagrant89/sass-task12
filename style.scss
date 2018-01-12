@@ -1,0 +1,307 @@
+$lightblue:#5fc0cd;
+$textColorGrey:#b8b8b8;
+actived{
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid white;
+  color: $lightblue;
+  line-height: 2rem;
+}
+inactived{
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: #55a8b3;
+  border: 1px solid #55a8b3;
+  color: white;
+  line-height: 2rem;
+}
+body{
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
+}
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  .header{
+    background-color:$lightblue;
+    display: table;
+    text-align: center;
+    width: 100%;
+    height: 4rem;
+    .header-btn{
+      display: table-cell;
+      vertical-align: middle;
+      label{
+        cursor: pointer;
+        .employer,.employee{
+          display: inline-block;
+        }
+        .employer{
+          @extend inactived;
+        }
+        .employee{
+          @extend actived;
+          margin-left: -1rem;
+        }
+        input{
+          display: none;
+        }
+        input:checked +.employer{
+          @extend actived;
+        }
+        input:checked ~.employee{
+          @extend inactived;
+          margin-left: -1rem;
+        }
+      }
+    }
+  }
+  .header-map{
+    display:block;
+    width: 3rem;
+    height: 2rem;
+    background: url(images/more-info_03.jpg) no-repeat left center;
+    background-size: 2rem;
+    position: fixed;
+    top:1rem;
+    left: 90%;
+  }
+  .dropdn{
+    width: 100%;
+    border-bottom: 1px solid $textColorGrey;
+    line-height: 2rem;
+    background-color: white;
+    select{
+      display: inline-block;
+      width: 32%;
+      color: $textColorGrey;
+      border: none;
+      padding: 0;
+      margin: 0;
+      text-align-last: center;
+    }
+    .mid-select{
+      border-left: 1px solid $textColorGrey;
+      border-right: 1px solid $textColorGrey;
+    }
+  }
+}
+main{
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+  ul{
+    padding: 0;
+  }
+  li,a{
+    display: block;
+    text-decoration: none;
+  }
+  span{
+    display: block;
+    margin: 0.3rem 0;
+  }
+  li{
+    .calendar{
+      background: url('images/more-info_14.jpg') no-repeat;
+      background-size: 1rem;
+      padding-left: 2rem;
+      color: $textColorGrey;
+    }
+    .date{
+      color: black;
+      height: 2rem;
+      line-height: 2rem;
+      padding-left: 2rem;
+      display: inline-block;
+    }
+    .address{
+      background: url('images/more-info_15.jpg') no-repeat;
+      background-size: 1rem;
+      @extend .calendar;
+    }
+    .cost{
+      height: 2rem;
+      line-height: 2rem;
+      // margin-right: 2rem;
+      padding-right: 2rem;
+      background: url('images/more-info_11.png') no-repeat right;
+      background-size: 1rem;
+      float: right;
+      display: inline-block;
+      color: red;
+    }
+  }
+  a{
+    padding: 1rem 2rem;
+    border-bottom: 1px solid $textColorGrey;
+  }
+}
+footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0rem;
+  background-color: #f8fafb;
+  display: table;
+  height: 5rem;
+  text-align: center;
+  .footer-btn{
+  display: table-cell;
+  vertical-align: middle;
+  }
+  .mainpage{
+    padding-top: 3rem;
+    width: 3rem;
+    border: none;
+    color: $lightblue;
+    background: url('images/more-info_20.jpg') no-repeat top;
+    background-size: 3rem;
+  }
+  .icon{
+    width: 5rem;
+    height: 5rem;
+    background: url('images/more-info_19.jpg') no-repeat top;
+    background-size: 5rem;
+    border: none;
+  }
+  .my-info{
+    @extend .mainpage;
+    color:$textColorGrey;
+    background: url('images/more-info_17.jpg') no-repeat top;
+    background-size: 3rem;
+  }
+  .f-btn{
+    margin: 0 1rem;
+  }
+}
+
+.detailed{
+  header{
+      background-color: rgb(95,192,205);
+      height: 6rem;
+      width:100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+  }
+  .back-btn{
+      position: absolute;
+      left: 2rem;
+      top: 2rem;
+      z-index: 10;
+  }
+  header>div{
+      text-align: center;
+      position: relative;
+      top: 2rem;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+  }
+  .background{
+      width: 100%;
+      background-image: url("images/info_02.png");
+      background-repeat: no-repeat;
+      background-size: 111%;
+      position: relative;
+      height: 10rem;
+      overflow: hidden;
+  }
+  .name{
+      position: relative;
+      top: 3rem;
+      left: 1rem;
+  }
+  p{
+      margin: 0.5rem;
+      font-size: 1.3rem;
+      color:white;
+  }
+  .address{
+      font-size: 1rem;
+  }
+  .photo{
+      width: 3rem;
+      float: left;
+      margin-right: 3rem;
+  }
+  img{
+      padding: 0 0.5rem;
+  }
+  .bar{
+      height: 1.3rem;
+      padding: 0 0.5rem 0 1rem;
+  }
+  .skills{
+      display: table;
+      position: relative;
+      width: 100%;
+      font-size:1.5rem;
+      line-height: 3rem;
+  }
+  .content{
+      display: table-cell;
+      vertical-align: middle;
+      border-bottom: 1px solid #ccc;
+  }
+  table{
+      position: relative;
+      vertical-align:middle;
+      line-height: 3rem;
+      font-size: 1.5rem;
+      border-collapse:collapse;
+      left: 5%;
+      width: 90%;
+  }
+  td{
+      border-bottom: 1px solid #ccc;
+  }
+  .red{
+      color: red;
+  }
+  .grey{
+      color: grey;
+      width: 6rem;
+  }
+  footer{
+      background-color:white;
+      height: 4rem;
+      width:100%;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      z-index: 1000;
+  }
+  .message-btn{
+      width: 40%;
+      height:3rem;
+      color: rgb(95,192,205);
+      background-color: white;
+      border: solid;
+      border-color: rgb(95,192,205);
+      border-radius: 15px;
+      float:left;
+      position: relative;
+      top: 10%;
+      left: 7%;
+  }
+  .contact-btn{
+      width: 40%;
+      height:3rem;
+      color: white;
+      background-color: rgb(95,192,205);
+      border: solid;
+      border-color: rgb(95,192,205);
+      float: right;
+      border-radius: 15px;
+      position: relative;
+      top: 10%;
+      right: 7%;
+      display: table;
+  }
+}
